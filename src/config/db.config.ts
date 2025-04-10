@@ -1,24 +1,33 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from "sequelize";
 import { config } from "dotenv";
 
 config();
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || 'grocery_management',
-  process.env.DB_USER || 'postgres',
-  process.env.DB_PASSWORD || 'postgres',
+  process.env.DB_NAME || "grocery_management",
+  process.env.DB_USER || "postgres",
+  process.env.DB_PASSWORD || "postgres",
   {
-    host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DB_PORT || '5432'),
-    dialect: 'postgres',
+    host: process.env.DB_HOST || "localhost",
+    port: parseInt(process.env.DB_PORT || "5432"),
+    dialect: "postgres",
     logging: false,
     pool: {
       max: 5,
       min: 0,
       acquire: 30000,
-      idle: 10000
-    }
+      idle: 10000,
+    },
   }
 );
+
+export const connectToDatabase = async () => {
+  await sequelize.authenticate();
+  if (sequelize) {
+    console.log("Database Connected Successfully 🤟");
+  } else {
+    console.error("Something Went Wrong With Database Connection 😭");
+  }
+};
 
 export default sequelize;

@@ -2,7 +2,7 @@ import express from "express";
 import { config } from "dotenv";
 import cors from "cors";
 import { errorHandler } from "./src/middlewares/errorHandler";
-import sequelize from "./src/config/db.config";
+import { connectToDatabase } from "./src/config/db.config";
 
 config();
 
@@ -16,7 +16,6 @@ app.use(cors());
 app.use(errorHandler);
 
 app.listen(PORT, async () => {
-  await sequelize.authenticate();
-  console.log("Database connection has been established successfully.");
+  await connectToDatabase();
   console.log(`Server is running on port ${PORT}`);
 });
