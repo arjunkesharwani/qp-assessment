@@ -15,7 +15,7 @@ const getGroceryById = async (id: string) => {
     if (!grocery) throw new AppError(404, "Grocery item not found");
     return grocery;
   } catch (error) {
-    throw new AppError(500, "Internal Server Error", error);
+    throw error;
   }
 };
 

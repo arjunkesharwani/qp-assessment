@@ -9,7 +9,7 @@ const getUserById = async (userId: string) => {
     }
     return user;
   } catch (error) {
-    throw new AppError(500, "Internal Server Error", error);
+    throw error;
   }
 };
  
