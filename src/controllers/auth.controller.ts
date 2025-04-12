@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import authServices from "../services/auth.services";
 import { success } from "../middlewares/response.handler";
-import { IUser } from "../models/User.model";
+import { IUser } from "../models/user.model";
 
 export const registerUser = async (
   req: Request,

@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import User, { IUser } from "../models/User.model";
 import AppError from "../middlewares/errorHandler";
+import User, { IUser } from "../models/user.model";
 
 const SECRET_KEY = process.env.JWT_SECRET || "qp@123";
 

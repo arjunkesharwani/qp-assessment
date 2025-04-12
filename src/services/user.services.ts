@@ -1,5 +1,5 @@
 import AppError from "../middlewares/errorHandler";
-import User from "../models/User.model";
+import User from "../models/user.model";
 
 const getUserById = async (userId: string) => {
   try {
