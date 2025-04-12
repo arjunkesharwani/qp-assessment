@@ -7,7 +7,7 @@ const SECRET_KEY = process.env.JWT_SECRET || "qp@123";
 
 const excludedRoutes = [
   { method: "GET", path: "/public" },
-  { method: "POST", path: "/auth/logi" },
+  { method: "POST", path: "/auth/login" },
   { method: "POST", path: "/auth/register" },
 ];
 
