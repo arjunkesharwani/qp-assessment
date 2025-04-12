@@ -39,12 +39,14 @@ A Node.js-based application for managing groceries, orders, and users. This appl
   ```
 
 ## API Documentation
-- **POST /api/auth/register**: Register a new user
-- **POST /api/auth/login**: Login an existing user
-- **GET /api/grocery**: Retrieve all grocery items
-- **POST /api/grocery**: Add a new grocery item
-- **GET /api/orders**: Retrieve all orders
-- **POST /api/orders**: Create a new order
+- **POST /auth/register**: Register a new user
+- **POST /auth/login**: Login an existing user
+- **GET /grocery**: Retrieve all grocery items
+- **POST /grocery**: Add a new grocery item
+- **PUT /grocery/:id**: Update an existing grocery item
+- **DELETE /grocery/:id**: Delete a grocery item
+- **GET /orders/:id**: Get order details
+- **POST /orders**: Create a new order
 
 ## Running the Project
 To start the application, run:
