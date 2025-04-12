@@ -23,6 +23,7 @@ const sequelize = new Sequelize(
 
 export const connectToDatabase = async () => {
   await sequelize.authenticate();
+  await sequelize.sync({});
   if (sequelize) {
     console.log("Database Connected Successfully 🤟");
   } else {
